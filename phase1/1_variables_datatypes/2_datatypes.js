@@ -22,3 +22,19 @@ let age;
 
 //7) Symbol: a unique and immutable primitive value/unique identifier (es6)
 const id = Symbol('unique');
+
+//example usecase for symbol
+const mySymbol = Symbol("myKey");
+
+const myObject = {
+  name: "Example",
+  [mySymbol]: "This is a symbol property",
+};
+
+console.log(myObject.name); // Output: Example
+console.log(myObject[mySymbol]); // Output: This is a symbol property
+
+// Symbol properties are not enumerable(cannot be looped/iterated)
+for (const key in myObject) {
+  console.log(key); // Output: name
+}
